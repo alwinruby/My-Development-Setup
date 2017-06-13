@@ -200,7 +200,7 @@ brew install mariadb
 brew services start mariadb
 ```
 
-This should install the database, and start the server. After running both, you should be able to login to the server. Default user is root with no passowrd.
+This should install the database, and start the server. After running both, you should be able to login to the server. Default user is root with no passoword.
 
 ## [Vue.js](https://vuejs.org/)
 Vue.js is a javascript framework that allows for a streamlined development process of single page web applications, or anything else. It's extremely light, and runs faster than any competing frameworks like Angular, React, or Ember. The javascript and templating syntax is intuitive, easy to learn, and powerful, allowing for quick development and deployment. It's focus in on the view layer only, so you would need to rely on other libraries to route traffic around, or have it consume a json api.
