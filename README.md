@@ -117,7 +117,7 @@ This is probably my favorite ZSH plugin of all time, and it looks the coolest by
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
 ```
-2. Make sure the file is sourced at the bottom of your .zshrc, if not, add the folowing:
+2. Make sure the file is sourced at the bottom of your .zshrc, if not, add the following:
 ```bash
 source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ```
