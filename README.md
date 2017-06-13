@@ -1,7 +1,7 @@
 # MacOS Dev Environment
 
 * This is my personal Mac setup, and I'll continue to add and edit things as I discover them!
-* This development environment involves Ruby, Crystal, Sinatra, Rails, Heroku, and
+* This development environment involves Ruby, Crystal, Sinatra, Rails, Heroku, Scala, Vue.js, MariaDB and
 general development tools I find useful
 * Current as of macOS Sierra v.10.12.5
 
@@ -13,6 +13,48 @@ Homebrew is the missing package manager for macOS, and makes installing and upda
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
+UPDATE: A recently added feature to Homebrew allows you to install all the software and apps you need by listing the in a single "Brewfile" and running "brew bundle install". This is convienient and fast approach to installing mass amounts of software on a new mac, saving lots of time. My brewfile is listed below, but I'll show how to install each of the tools below through brew as a secondary option.
+### Brewfile
+```bash
+tap 'caskroom/cask'
+
+# Core Homebrew
+cask 'java'
+brew 'git'
+brew 'sqlite3'
+brew 'mysql', restart_service: true
+brew 'crystal-lang'
+brew 'curl'
+brew 'maven'
+brew 'node'
+brew 'scala'
+brew 'vim'
+brew 'wget'
+brew 'npm'
+brew 'python3'
+brew 'docker'
+brew 'heroku'
+
+
+# Cask Apps
+cask 'google-chrome'
+cask 'sequel-pro'
+cask 'filezilla'
+cask 'spotify'
+cask 'atom'
+cask 'hyper'
+cask 'postman'
+cask 'eclipse-java'
+cask 'google-drive'
+cask 'sqlitebrowser'
+cask 'microsoft-office'
+
+# Mac app store
+mas 'GIPHY CAPTURE', id: 668208984
+mas 'The Unarchiver', id: 425424353
+mas 'BetterSnapTool', id: 417375580
+mas 'Battery Monitor', id: 836505650
+```
 ## [ZSH-Shell](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH)
 ZSH or Z-Shell is a fantastic replacement for Bash. It gives you powerful autocompletions, and can be configured with tons of custom plugins, themes, and components, through a tool such as Oh-My-Zsh. I previously used Fish, but had issues with POSIX compatibility, which is a non issue with ZSH. ZSH gives you more flexibility in the end to make it your own, instead or relying on out of the box functionality.
 ```bash
@@ -116,5 +158,61 @@ Which should output something similar =>
 ```
 See the [RVM website](https://rvm.io/) for more details regarding different versions of ruby
 
+### Gems
+This is a list of gems I use regularly in ruby, mostly for small applications, I have these gems installed globally, so I don't have to worry about running bundler on small ruby scripts
+1. Install gems with the following syntax:
+```bash
+gem install rails
+```
+2. List of all the gems I use
+```bash
+gem 'sinatra'
+gem 'rails'
+gem 'twilio-ruby'
+gem 'rest-client'
+gem 'sequel'
+gem 'rubocop'
+gem 'sinatra-subdomain'
+gem 'sinatra-json'
+```
+
+
 ## [Crystal-Lang](https://crystal-lang.org/)
-Recently I've been looking at higher performance languages, to find something similar to ruby, yet performant at the same time. Crystal is a relatively new programming language based on the LLVM compiler. The syntax is heavily inspired by ruby, and looks identical in many aspects. The tagline for the project is "Fast as C, slick as ruby." Pretty bold claim. It's still in alpha phase, but they hope to hve a stable realse by the end of the year. It claims to be faster than Golang, 
+Recently I've been looking at higher performance languages, to find something similar to ruby, yet performant at the same time. Crystal is a relatively new programming language based on the LLVM compiler. The syntax is heavily inspired by ruby, and looks identical in many aspects. The tagline for the project is "Fast as C, slick as ruby." Pretty bold claim. It's still in alpha phase, but they hope to have a stable release by the end of the year. It claims to be faster than Go, Java, and any of the dynamic languages. Crystal seems to fill niche of having the best features of go and ruby combined into a semi-safe, statically typed, compiled language, with performance to boon.
+
+1. Install the compiler and tools using brew
+```bash
+brew install crystal-lang
+```
+2. Running the crystal command will bring up the help page with possible commands.
+```bash
+crystal
+```
+
+## [MariaDB](https://mariadb.org/)
+MariaDB is an open source database created by the original team that developed mySQL. It's technically a fork of mySQL, with drop in compatibility ensured with mySQL tooling. Lately, Oracle hasn't been maintaining mySQL like they should, so they created an open source variant that has a large community following it. New features are always being released, and with compatibility promised, it posed little risk to try out.
+
+1. MariaDB has detailed install instructions [here](https://mariadb.com/kb/en/mariadb/installing-mariadb-on-macos-using-homebrew/) but the following is a condensed version.
+```bash
+brew install mariadb
+```
+```bash
+brew services start mariadb
+```
+
+This should install the database, and start the server. After running both, you should be able to login to the server. Default user is root with no passowrd.
+
+## [Vue.js](https://vuejs.org/)
+Vue.js is a javascript framework that allows for a streamlined development process of single page web applications, or anything else. It's extremely light, and runs faster than any competing frameworks like Angular, React, or Ember. The javascript and templating syntax is intuitive, easy to learn, and powerful, allowing for quick development and deployment. It's focus in on the view layer only, so you would need to rely on other libraries to route traffic around, or have it consume a json api.
+
+1. Install requires npm or "node package manager", so make sure it's installed by running the following:
+```bash
+brew install node
+brew install npm
+```
+2. Using npm, install vue and the cli tools for building an app easily.
+```bash
+npm install --global vue-cli
+```
+
+The website has a fantastic [guide](https://vuejs.org/v2/guide/) that walks through the basics of syntax, the cli tools, and more. Be sure to check it out.
