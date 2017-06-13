@@ -1,20 +1,20 @@
 # MacOS Dev Environment
 
 * This is my personal Mac setup, and I'll continue to add and edit things as I discover them!
-* This development environment involves Ruby, Sinatra, Rails, Crystal, Heroku, and
+* This development environment involves Ruby, Crystal, Sinatra, Rails, Heroku, and
 general development tools I find useful
 * Current as of macOS Sierra v.10.12.5
 
-# Essential Programs & Tools
+# My Essential Programs & Tools
 
 ## [Homebrew](https://brew.sh/)
-Homebrew is the missing package manager for macOS, and makes installing and updating software a cakewalk. It really gives Apt-Get and Yum a run for their money, and is arguably better in many ways. Install is super easy, just pop open a terminal and run the command below. We'll start using Homebrew for the majority of the software on this list.
+Homebrew is the missing package manager for macOS, and makes installing and updating software a cakewalk. It really gives Apt-Get and Yum a run for their money, and is arguably better in many ways. We'll start using Homebrew for the majority of the software on this list. Install is simple, just pop open a terminal and run the command below.
  ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-## [ZSH Shell](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH)
-ZSH or Z-Shell is a fantastic replacement for Bash. It gives you powerful autocompletions, and can be configured with tons of custom plugins, themes, and components, through a tool such as Oh-My-Zsh.
+## [ZSH-Shell](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH)
+ZSH or Z-Shell is a fantastic replacement for Bash. It gives you powerful autocompletions, and can be configured with tons of custom plugins, themes, and components, through a tool such as Oh-My-Zsh. I previously used Fish, but had issues with POSIX compatibility, which is a non issue with ZSH. ZSH gives you more flexibility in the end to make it your own, instead or relying on out of the box functionality.
 ```bash
 brew install zsh zsh-completions
 ```
@@ -50,10 +50,38 @@ Last step is setting a theme, which is set in the section below
 ```bash
 ZSH_THEME="robbyrussell"
 ```
-
 Here's a list of all the themes => [Themes](https://github.com/robbyrussell/oh-my-zsh/wiki/themes)
 
-## [Git](https://git-scm.com/)
+
+## [ZSH Autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+This plugin extends the functionality of ZSH to make autosuggestions while you type, based on previous command history
+
+1. It installs like any other plugin for zsh, first, cloning into the .oh-my-zsh folder
+```bash
+git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+```
+2. Add the plugin to the list of plugins for Oh-My-Zsh to load
+```bash
+plugins=(zsh-autosuggestions)
+```
+Then start a new terminal session to see the changes
+
+
+## [ZSH Syntax Highlighting](https://github.com/zsh-users/zsh-autosuggestions)
+This is probably my favorite ZSH plugin of all time, and it looks the coolest by far. This plugin highlights the commands as you type, so you can easily catch spelling errors, mistakes, or incorrect path destinations.
+
+1. This install is slightly different, but start by cloning the repo:
+```bash
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+```
+2. Make sure the file is sourced at the bottom of your .zshrc, if not, add the folowing:
+```bash
+source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+```
+
+
+## [Git-Version Control](https://git-scm.com/)
 What would a dev environment be without Git? Git is the defacto version control system for developers.
 ```bash
 brew install git
@@ -63,3 +91,30 @@ After a fresh install of Git, it's important to set your global variables, so yo
 git config --global user.name "Your Name Here"
 git config --global user.email "your_email@youremail.com"
 ```
+
+
+## [Ruby-Version-Manager - RVM](https://rvm.io/)
+"RVM or Ruby Version Manager, is a command line tool that allows you to easily install, manage, and work with multiple ruby environments"
+
+TLDR  =>  Keeps different versions of Ruby in line, and makes sure that your system version of ruby isn't messed with.
+
+1. Run the following to add the public authentication keys
+```bash
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+```
+2. This command actually installs that stable version of rvm
+```bash
+\curl -sSL https://get.rvm.io | bash -s stable --ruby
+```
+3. After this finishes, restart the terminal and check the following:
+```bash
+which ruby
+```
+Which should output something similar =>
+```bash
+/Users/jake/.rvm/rubies/ruby-2.4.0/bin/ruby
+```
+See the [RVM website](https://rvm.io/) for more details regarding different versions of ruby
+
+## [Crystal-Lang](https://crystal-lang.org/)
+Recently I've been looking at higher performance languages, to find something similar to ruby, yet performant at the same time. Crystal is a relatively new programming language based on the LLVM compiler. The syntax is heavily inspired by ruby, and looks identical in many aspects. The tagline for the project is "Fast as C, slick as ruby." Pretty bold claim. It's still in alpha phase, but they hope to hve a stable realse by the end of the year. It claims to be faster than Golang, 
