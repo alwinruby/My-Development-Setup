@@ -226,3 +226,6 @@ brew cask install atom
 
 ## [Hyper.js](https://hyper.is/)
 Hyper is a terminal replacement based on the same electron framework as Atom. It allows for deep customization and plugin creation, and is hackable to the core. iTerm2 is another good replacement for Hyper, but IMO Hyper looks better. Either represent an extreme improvement over the default MacOS terminal.
+```bash
+brew cask install hyper
+```
