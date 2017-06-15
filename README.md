@@ -225,4 +225,4 @@ brew cask install atom
 [Visual Studio Code](https://code.visualstudio.com/) is a similar option, still open source, from Microsoft. I just personally prefer the tooling support in Atom a bit better, and the performance is generally on par for both.
 
 ## [Hyper.js](https://hyper.is/)
-Hyper is a terminal replacement based on the same electron framework as Atom
+Hyper is a terminal replacement based on the same electron framework as Atom. It allows for deep customization and plugin creation, and is hackable to the core. iTerm2 is another good replacement for Hyper, but IMO Hyper looks better. Either represent an extreme improvement over the default MacOS terminal.
