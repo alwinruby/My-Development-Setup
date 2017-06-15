@@ -5,7 +5,7 @@
 general development tools I find useful
 * Current as of macOS Sierra v.10.12.5
 
-# My Essential Programs & Tools
+# My Programs & Tools
 
 ## [Homebrew](https://brew.sh/)
 Homebrew is the missing package manager for macOS, and makes installing and updating software a cakewalk. It really gives Apt-Get and Yum a run for their money, and is arguably better in many ways. We'll start using Homebrew for the majority of the software on this list. Install is simple, just pop open a terminal and run the command below.
@@ -216,3 +216,13 @@ npm install --global vue-cli
 ```
 
 The website has a fantastic [guide](https://vuejs.org/v2/guide/) that walks through the basics of syntax, the cli tools, and more. Be sure to check it out.
+
+## [Atom.io](https://atom.io/)
+Atom is a modern text editor platform built on the electron framework with only HTML, CSS, and Javascript. The package manager is awesome, the default syntax highlighting is awesome, it's made by Github, and it's open source.
+```bash
+brew cask install atom
+```
+[Visual Studio Code](https://code.visualstudio.com/) is a similar option, still open source, from Microsoft. I just personally prefer the tooling support in Atom a bit better, and the performance is generally on par for both.
+
+## [Hyper.js](https://hyper.is/)
+Hyper is a terminal replacement based on the same electron framework as Atom
