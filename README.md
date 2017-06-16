@@ -176,19 +176,6 @@ gem 'sinatra-subdomain'
 gem 'sinatra-json'
 ```
 
-
-## [Crystal-Lang](https://crystal-lang.org/)
-Recently I've been looking at higher performance languages, to find something similar to ruby, yet performant at the same time. Crystal is a relatively new programming language based on the LLVM compiler. The syntax is heavily inspired by ruby, and looks identical in many aspects. The tagline for the project is "Fast as C, slick as ruby." Pretty bold claim. It's still in alpha phase, but they hope to have a stable release by the end of the year. It claims to be faster than Go, Java, and any of the dynamic languages. Crystal seems to fill niche of having the best features of go and ruby combined into a semi-safe, statically typed, compiled language, with performance to boon.
-
-1. Install the compiler and tools using brew
-```bash
-brew install crystal-lang
-```
-2. Running the crystal command will bring up the help page with possible commands.
-```bash
-crystal
-```
-
 ## [MariaDB](https://mariadb.org/)
 MariaDB is an open source database created by the original team that developed mySQL. It's technically a fork of mySQL, with drop in compatibility ensured with mySQL tooling. Lately, Oracle hasn't been maintaining mySQL like they should, so they created an open source variant that has a large community following it. New features are always being released, and with compatibility promised, it posed little risk to try out.
 
