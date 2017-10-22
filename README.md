@@ -1,11 +1,13 @@
 # MacOS Dev Environment
 
 * This is my personal Mac setup, and I'll continue to add and edit things as I discover them!
-* This development environment involves Ruby, Crystal, Sinatra, Rails, Heroku, Scala, Vue.js, MariaDB and
+* This development environment involves Ruby, Crystal, Sinatra, Rails, Heroku, Vue.js and
 general development tools I find useful
-* Current as of macOS Sierra v.10.12.5
+* Current as of macOS Sierra v.10.12.6
 
 # My Programs & Tools
+
+## [Visual Studio Code](https://code.visualstudio.com/)
 
 ## [Homebrew](https://brew.sh/)
 Homebrew is the missing package manager for macOS, and makes installing and updating software a cakewalk. It really gives Apt-Get and Yum a run for their money, and is arguably better in many ways. We'll start using Homebrew for the majority of the software on this list. Install is simple, just pop open a terminal and run the command below.
@@ -55,6 +57,7 @@ mas 'The Unarchiver', id: 425424353
 mas 'BetterSnapTool', id: 417375580
 mas 'Battery Monitor', id: 836505650
 ```
+
 ## [ZSH-Shell](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH)
 ZSH or Z-Shell is a fantastic replacement for Bash. It gives you powerful autocompletions, and can be configured with tons of custom plugins, themes, and components, through a tool such as Oh-My-Zsh. I previously used Fish, but had issues with POSIX compatibility, which is a non issue with ZSH. ZSH gives you more flexibility in the end to make it your own, instead or relying on out of the box functionality.
 ```bash
@@ -203,13 +206,6 @@ npm install --global vue-cli
 ```
 
 The website has a fantastic [guide](https://vuejs.org/v2/guide/) that walks through the basics of syntax, the cli tools, and more. Be sure to check it out.
-
-## [Atom.io](https://atom.io/)
-Atom is a modern text editor platform built on the electron framework with only HTML, CSS, and Javascript. The package manager is awesome, the default syntax highlighting is awesome, it's made by Github, and it's open source.
-```bash
-brew cask install atom
-```
-[Visual Studio Code](https://code.visualstudio.com/) is a similar option, still open source, from Microsoft. I just personally prefer the tooling support in Atom a bit better, and the performance is generally on par for both.
 
 ## [Hyper.js](https://hyper.is/)
 Hyper is a terminal replacement based on the same electron framework as Atom. It allows for deep customization and plugin creation, and is hackable to the core. iTerm2 is another good replacement for Hyper, but IMO Hyper looks better. Either represent an extreme improvement over the default MacOS terminal.
