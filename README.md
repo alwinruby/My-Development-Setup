@@ -1,9 +1,7 @@
 # MacOS Dev Environment
 
 * This is my personal Mac setup, and I'll continue to add and edit things as I discover them!
-* This development environment involves Ruby, Crystal, Sinatra, Rails, Heroku, Vue.js and
-general development tools I find useful
-* Current as of macOS Sierra v.10.12.6
+* Current as of macOS HighSierra v.10.13.3
 
 # My Programs & Tools
 
